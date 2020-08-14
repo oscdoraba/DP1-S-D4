@@ -78,6 +78,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `investor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `activity_sector` varchar(255),
+        `firm_name` varchar(255),
+        `profile` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `notice` (
        `id` integer not null,
         `version` integer not null,
@@ -189,6 +199,11 @@
 
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `investor` 
+       add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 

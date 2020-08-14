@@ -240,4 +240,36 @@
 	
 	</bean>
 
+    <!-- Investor -->
+    
+    <bean name="investor1UserAccount" class="acme.framework.entities.UserAccount">
+    	<property name="username" value="investor1" />
+    	<property name="password" value="investor1" />
+    	<property name="enabled" value="true" />
+    	<property name="identity">
+    		<bean class="acme.datatypes.UserIdentity">
+    			<property name="name" value="Investor" />
+    			<property name="surname" value="One" />
+    			<property name="email" value="investor1@gmail.com" />
+    		</bean>
+    	</property>
+    	<property name="roles" >
+    		<list>
+    			<ref bean="investor1Investor" />
+    			<ref bean="investor1Authenticated" />
+    		</list>
+    	</property>
+     </bean>
+     
+     <bean name="investor1Investor" class="acme.entities.roles.Investor">
+     	<property name="firmName" value="Investor 1" />
+     	<property name="activitySector" value="Electricity" />
+     	<property name="profile" value="Profile 1" />
+     	<property name="userAccount" ref="investor1UserAccount" />
+     </bean>
+     
+     <bean name="investor1Authenticated" class="acme.framework.entities.Authenticated">
+     	<property name="userAccount" ref="investor1UserAccount" />
+     </bean>
+     
 </beans>
