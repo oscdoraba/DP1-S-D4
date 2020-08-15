@@ -13,6 +13,18 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `date_of_creation` datetime(6),
+        `money_offer_amount` double precision,
+        `money_offer_currency` varchar(255),
+        `statement` varchar(255),
+        `ticker` varchar(255),
+        `investor_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -191,6 +203,11 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
