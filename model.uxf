@@ -519,10 +519,10 @@ Challenges
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>448</x>
-      <y>203</y>
+      <x>427</x>
+      <y>161</y>
       <w>140</w>
-      <h>63</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Investor
@@ -531,5 +531,43 @@ Investor
 + activitySector: String {NotBlank}
 + profile: String {NotBlank}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>259</x>
+      <y>322</y>
+      <w>259</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Applications
+--
++ ticker: String{NotBlank, Pattern}
++ dateOfCreation: Date{Temporal(TIMESTAMP),Past}
++ statement: String{NotBlank}
++ moneyOffer: Money{NotNull, Valid}
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>224</y>
+      <w>84</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+
+m1=0..*
+m2=1
+Registed by ^
+</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
