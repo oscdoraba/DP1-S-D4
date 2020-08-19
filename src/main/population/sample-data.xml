@@ -272,6 +272,75 @@
      	<property name="userAccount" ref="investor1UserAccount" />
      </bean>
      
+     <!-- Entrepreneur -->
+     
+     <bean name="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
+    	<property name="username" value="entrepreneur1" />
+    	<property name="password" value="entrepreneur1" />
+    	<property name="enabled" value="true" />
+    	<property name="identity">
+    		<bean class="acme.datatypes.UserIdentity">
+    			<property name="name" value="Entrepreneur" />
+    			<property name="surname" value="One" />
+    			<property name="email" value="entrepreneur1@gmail.com" />
+    		</bean>
+    	</property>
+    	<property name="roles" >
+    		<list>
+    			<ref bean="entrepreneur1Entrepreneur" />
+    			<ref bean="entrepreneur1Authenticated" />
+    		</list>
+    	</property>
+     </bean>
+     
+     <bean name="entrepreneur1Entrepreneur" class="acme.entities.roles.Entrepreneur">
+     	<property name="startUpName" value="Emprendedor 1" />
+     	<property name="activitySector" value="Fontaneria" />
+     	<property name="qualificationRecord" value="Altamente cualificado para emprender" />
+     	<property name="skillsRecord" value="Habilidoso en este sector con varios años de experiencia" />
+     	<property name="userAccount" ref="entrepreneur1UserAccount" />
+     </bean>
+     
+     <bean name="entrepreneur1Authenticated" class="acme.framework.entities.Authenticated">
+     	<property name="userAccount" ref="entrepreneur1UserAccount" />
+     </bean>
+     
+     
+     
+     
+     
+     
+     <bean name="entrepreneur2UserAccount" class="acme.framework.entities.UserAccount">
+    	<property name="username" value="entrepreneur2" />
+    	<property name="password" value="entrepreneur2" />
+    	<property name="enabled" value="true" />
+    	<property name="identity">
+    		<bean class="acme.datatypes.UserIdentity">
+    			<property name="name" value="Entrepreneur" />
+    			<property name="surname" value="Two" />
+    			<property name="email" value="entrepreneur2@gmail.com" />
+    		</bean>
+    	</property>
+    	<property name="roles" >
+    		<list>
+    			<ref bean="entrepreneur2Entrepreneur" />
+    			<ref bean="entrepreneur2Authenticated" />
+    		</list>
+    	</property>
+     </bean>
+     
+     <bean name="entrepreneur2Entrepreneur" class="acme.entities.roles.Entrepreneur">
+     	<property name="startUpName" value="Emprendedor 2" />
+     	<property name="activitySector" value="Fontaneria" />
+     	<property name="qualificationRecord" value="Altamente cualificado para emprender 2" />
+     	<property name="skillsRecord" value="Habilidoso en este sector con varios años de experiencia 2" />
+     	<property name="userAccount" ref="entrepreneur2UserAccount" />
+     </bean>
+     
+     <bean name="entrepreneur2Authenticated" class="acme.framework.entities.Authenticated">
+     	<property name="userAccount" ref="entrepreneur2UserAccount" />
+     </bean>
+     
      <!-- Application -->
      
      <bean id="application01" class="acme.entities.application.Application">
@@ -292,7 +361,92 @@
 	<property name="moneyOffer" value="400.50 EUR" />
 	<property name="investor" ref="investor1Investor" />
 	</bean>
+	
+	<!-- Investment Round -->
      
+    <bean id="investmentRound01" class="acme.entities.investmentRound.InvestmentRound">
+	
+	<property name="ticker" value="INI-20-342789"/>
+	<property name="creation" value="2020/07/13 17:23"/>
+	<property name="round" value="BRIDGE"/>
+	<property name="title" value="Inversion futurista" />
+	<property name="description" value="Inversion que puede llegar a proporcionar grandes cantidades de beneficios" />
+	<property name="amount" value="€ 3000" />
+	<property name="optional" value="" />
+	<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
+	</bean>
+	
+	<bean id="investmentRound02" class="acme.entities.investmentRound.InvestmentRound">
+	
+	<property name="ticker" value="FIN-20-984232"/>
+	<property name="creation" value="2020/06/20 18:50"/>
+	<property name="round" value="ANGEL"/>
+	<property name="title" value="Inversion con alta progresion" />
+	<property name="description" value="Inversion que supone un alto riesgo pero a su vez puede generar un gran progreso" />
+	<property name="amount" value="€ 2500" />
+	<property name="optional" value="http://www.linkInformativo.com" />
+	<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
+	</bean>
+	
+	<bean id="investmentRound03" class="acme.entities.investmentRound.InvestmentRound">
+	
+	<property name="ticker" value="ALT-20-187632"/>
+	<property name="creation" value="2020/06/20 18:50"/>
+	<property name="round" value="SEED"/>
+	<property name="title" value="Inversion de ejemplo" />
+	<property name="description" value="Inversion que supone un alto riesgo al ser un ejemplo que no esta justificado" />
+	<property name="amount" value="€ 1200" />
+	<property name="optional" value="http://www.linkInformativo.com" />
+	<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
+	</bean>
+     
+    <!-- Activity -->
+    
+    <bean id="activity01" class="acme.entities.investmentRound.Activity">
+	
+	<property name="title" value="Mecanismo de ejemplo 1"/>
+	<property name="start" value="2020/07/14 17:25"/>
+	<property name="end" value="2021/08/15 19:00"/>
+	<property name="budget" value="€ 1500" />
+	<property name="investment" ref="investmentRound01" />
+	</bean>
+	
+	<bean id="activity02" class="acme.entities.investmentRound.Activity">
+	
+	<property name="title" value="Mecanismo de ejemplo 2"/>
+	<property name="start" value="2020/07/20 17:25"/>
+	<property name="end" value="2021/08/25 19:00"/>
+	<property name="budget" value="€ 1500" />
+	<property name="investment" ref="investmentRound01" />
+	</bean>
+	
+	<bean id="activity03" class="acme.entities.investmentRound.Activity">
+	
+	<property name="title" value="Mecanismo de ejemplo 3"/>
+	<property name="start" value="2020/06/25 20:50"/>
+	<property name="end" value="2020/08/19 12:40"/>
+	<property name="budget" value="€ 1250" />
+	<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity04" class="acme.entities.investmentRound.Activity">
+	
+	<property name="title" value="Mecanismo de ejemplo 4"/>
+	<property name="start" value="2020/07/15 01:30"/>
+	<property name="end" value="2020/08/19 15:21"/>
+	<property name="budget" value="€ 1250" />
+	<property name="investment" ref="investmentRound02" />
+	</bean>
+	
+	<bean id="activity05" class="acme.entities.investmentRound.Activity">
+	
+	<property name="title" value="Mecanismo de ejemplo 5"/>
+	<property name="start" value="2020/07/15 01:30"/>
+	<property name="end" value="2021/08/19 15:21"/>
+	<property name="budget" value="€ 1200" />
+	<property name="investment" ref="investmentRound03" />
+	</bean>
+    
      
      
      

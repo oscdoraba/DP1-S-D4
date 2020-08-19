@@ -64,6 +64,11 @@
 			<acme:menu-suboption code="master.menu.investor.listApplication" action="/investor/application/list"/>
 			
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')"> 
+			<acme:menu-suboption code="master.menu.entrepreneur.investment-round.list" action="/entrepreneur/investment-round/list-mine" />
+			
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
@@ -85,6 +90,8 @@
 			<acme:menu-suboption code="master.menu.authenticated.createTechnology-records" action="/authenticated/technology-records/create"/>
 			<acme:menu-suboption code="master.menu.authenticated.listChallenges" action="/authenticated/challenges/list" />
 			<acme:menu-suboption code="master.menu.authenticated.createChallenges" action="/authenticated/challenges/create" />
+			<acme:menu-suboption code="master.menu.authenticated.listInvestmentRounds" action="/authenticated/investment-round/list" />
+			
 				
 			
 		</acme:menu-option>
