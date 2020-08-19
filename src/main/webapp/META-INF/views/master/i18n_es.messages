@@ -86,6 +86,12 @@ master.menu.authenticated.listTechnology-records = Listar Registros Tecnológico
 master.menu.authenticated.createTechnology-records = Crear Registros Tecnológicos
 master.menu.authenticated.listChallenges = Listar Retos
 master.menu.authenticated.createChallenges = Crear Reto
+master.menu.authenticated.listInvestmentRounds = Listar Rondas de Inversion
+
+# master.menu.entrepreneur ######################################################
+
+master.menu.entrepreneur = Emprendedor
+master.menu.entrepreneur.investment-round.list = Listar Mis Rondas de Inversion
 
 ﻿# master.footer ###############################################################
 

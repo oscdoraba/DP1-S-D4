@@ -69,8 +69,6 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.investor = Investor
 master.menu.investor.listApplication = List Applications
 
-
-
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -88,7 +86,13 @@ master.menu.authenticated.listTechnology-records = List Technology Records
 master.menu.authenticated.createTechnology-records = Create Technology Record
 master.menu.authenticated.listChallenges = List Challenges
 master.menu.authenticated.createChallenges = Create Challenge
+master.menu.authenticated.listInvestmentRounds = List Investment Rounds
 
+
+# master.menu.entrepreneur ######################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.investment-round.list = List My Investment Rounds
 
 # master.footer ###############################################################
 

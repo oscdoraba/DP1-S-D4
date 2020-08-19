@@ -10,64 +10,65 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.notice;
+package acme.features.entrepreneur.investmentRound;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.notice.Notice;
-import acme.entities.shout.Shout;
+import acme.entities.challenges.Challenges;
+import acme.entities.inquiries.Inquiries;
+import acme.entities.investmentRound.Activity;
+import acme.entities.investmentRound.InvestmentRound;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousNoticeListService implements AbstractListService<Anonymous, Notice> {
+public class EntrepreneurInvestmentRoundListService implements AbstractListService<Entrepreneur, InvestmentRound> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	AnonymousNoticeRepository repository;
+	EntrepreneurInvestmentRoundRepository repository;
 
 
-	// AbstractListService<Administrator, UserAccount> interface --------------
+	
 
 	@Override
-	public boolean authorise(final Request<Notice> request) {
+	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Notice> request, final Notice entity, final Model model) {
+	public void unbind(final Request<InvestmentRound> request, final InvestmentRound entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
 		
 
-		request.unbind(entity, model, "picture", "creation", "deadline");
+		request.unbind(entity, model, "ticker", "creation", "round", "title");
 
 	}
 	
 
 	@Override
-	public Collection<Notice> findMany(final Request<Notice> request) {
+	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		Collection<Notice> result;
-
-		result = this.repository.findMany();
+		Collection<InvestmentRound> result;
 		
+		result = this.repository.findMany(request.getPrincipal().getActiveRoleId());
+
 		return result;
 	}
 

@@ -10,64 +10,64 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.notice;
+package acme.features.entrepreneur.activity;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.tomcat.jni.Time;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.notice.Notice;
-import acme.entities.shout.Shout;
+import acme.entities.challenges.Challenges;
+import acme.entities.inquiries.Inquiries;
+import acme.entities.investmentRound.Activity;
+import acme.entities.investmentRound.InvestmentRound;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousNoticeListService implements AbstractListService<Anonymous, Notice> {
+public class EntrepreneurActivityListService implements AbstractListService<Entrepreneur, Activity> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	AnonymousNoticeRepository repository;
+	EntrepreneurActivityRepository repository;
 
 
-	// AbstractListService<Administrator, UserAccount> interface --------------
+	
 
 	@Override
-	public boolean authorise(final Request<Notice> request) {
+	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Notice> request, final Notice entity, final Model model) {
+	public void unbind(final Request<Activity> request, final Activity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
 		
 
-		request.unbind(entity, model, "picture", "creation", "deadline");
+		request.unbind(entity, model, "title", "start", "end");
 
 	}
 	
 
 	@Override
-	public Collection<Notice> findMany(final Request<Notice> request) {
+	public Collection<Activity> findMany(final Request<Activity> request) {
 		assert request != null;
-
-		Collection<Notice> result;
-
-		result = this.repository.findMany();
+		Collection<Activity> result;
 		
+		result = this.repository.findMany(request.getModel().getInteger("id")); //Conseguimos a traves de request, la id que pasamos tras pulsar el boton
+
 		return result;
 	}
 

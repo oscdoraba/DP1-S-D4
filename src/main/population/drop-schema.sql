@@ -1,4 +1,8 @@
 
+    alter table `activity` 
+       drop 
+       foreign key `FKev7kvr6qe9wut886e6ju0o9gs`;
+
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -19,6 +23,14 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `entrepreneur` 
+       drop 
+       foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
+
+    alter table `investment_round` 
+       drop 
+       foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
+
     alter table `investor` 
        drop 
        foreign key FK_dcek5rr514s3rww0yy57vvnpq;
@@ -26,6 +38,8 @@
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    drop table if exists `activity`;
 
     drop table if exists `administrator`;
 
@@ -43,7 +57,11 @@
 
     drop table if exists `dorado_bulletin`;
 
+    drop table if exists `entrepreneur`;
+
     drop table if exists `inquiries`;
+
+    drop table if exists `investment_round`;
 
     drop table if exists `investor`;
 
