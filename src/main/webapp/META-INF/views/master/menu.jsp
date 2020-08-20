@@ -82,6 +82,8 @@
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-entrepreneur" action="/authenticated/entrepreneur/create" access="!hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.user-account.entrepreneur" action="/authenticated/entrepreneur/update" access="hasRole('Entrepreneur')" />
 			<acme:menu-suboption code="master.menu.user-account.listNotice" action="/authenticated/notice/list"/>
 			<acme:menu-suboption code="master.menu.user-account.listOverture" action="/authenticated/overture/list"/>
 			<acme:menu-suboption code="master.menu.user-account.listToolRecord" action="/authenticated/tool-record/list"/>				
