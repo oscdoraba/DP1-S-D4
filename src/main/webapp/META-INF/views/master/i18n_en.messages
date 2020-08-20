@@ -67,7 +67,7 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.investor ##########################################################
 
 master.menu.investor = Investor
-master.menu.investor.listApplication = List Applications
+master.menu.investor.listApplication = List My Applications
 
 # master.menu.user-account ####################################################
 
@@ -93,6 +93,7 @@ master.menu.authenticated.listInvestmentRounds = List Investment Rounds
 
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.investment-round.list = List My Investment Rounds
+master.menu.entrepreneur.application.list = List Applications from My Investment Round
 
 # master.footer ###############################################################
 

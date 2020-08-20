@@ -9,7 +9,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.investor.application;
+package acme.features.entrepreneur.application;
 
 import javax.annotation.PostConstruct;
 
@@ -18,23 +18,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.application.Application;
-import acme.entities.roles.Investor;
-import acme.features.authenticated.inquiries.AuthenticatedInquiriesListService;
-import acme.features.authenticated.inquiries.AuthenticatedInquiriesShowService;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/investor/application/")
-public class InvestorApplicationController extends AbstractController<Investor, Application> {
+@RequestMapping("/entrepreneur/application/")
+public class EntrepreneurApplicationController extends AbstractController<Entrepreneur, Application> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private InvestorApplicationListService listService;
+	private EntrepreneurApplicationListService listService;
 	
 	@Autowired
-	private InvestorApplicationShowService showService;
+	private EntrepreneurApplicationShowService showService;
 	
 	
 
