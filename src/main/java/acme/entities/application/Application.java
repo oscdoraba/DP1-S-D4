@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import acme.entities.investmentRound.InvestmentRound;
 import acme.entities.roles.Investor;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -51,6 +52,12 @@ public class Application extends DomainEntity {
 		@Valid
 		@ManyToOne(optional = false)
 		private Investor investor;
+		
+		@NotNull
+		@Valid
+		@ManyToOne(optional = false)
+		private InvestmentRound investment;
+		
 		
 		
 }
