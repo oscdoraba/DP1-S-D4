@@ -16,6 +16,7 @@ investor.application.list.label.statement = Declaración
 investor.application.form.label.ticker = Código bursátil
 investor.application.form.label.dateOfCreation = Fecha de creación
 investor.application.form.label.statement = Declaración
+investor.application.form.label.moneyOffer = Oferta
 
 
 

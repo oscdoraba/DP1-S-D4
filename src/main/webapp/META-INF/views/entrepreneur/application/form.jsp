@@ -19,6 +19,7 @@
 	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker"/>
 	<acme:form-moment code="entrepreneur.application.form.label.dateOfCreation" path="dateOfCreation" readonly="true"/>
 	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement"/>
+	<acme:form-money code="entrepreneur.application.form.label.moneyOffer" path="moneyOffer"/>
 	
 	
 	<acme:form-return code="entrepreneur.application.form.button.return"/>

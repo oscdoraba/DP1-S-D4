@@ -1,5 +1,4 @@
 /*
- 
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -63,7 +62,7 @@ public class InvestorApplicationShowService implements AbstractShowService<Inves
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "dateOfCreation", "statement");
+		request.unbind(entity, model, "ticker", "dateOfCreation", "statement", "moneyOffer");
 
 		
 	}

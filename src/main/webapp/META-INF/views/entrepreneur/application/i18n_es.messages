@@ -16,6 +16,7 @@ entrepreneur.application.list.label.statement = Declaración
 entrepreneur.application.form.label.ticker = Código bursátil
 entrepreneur.application.form.label.dateOfCreation = Fecha de creación
 entrepreneur.application.form.label.statement = Declaración
+entrepreneur.application.form.label.moneyOffer = Oferta
 
 
 
