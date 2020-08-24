@@ -16,6 +16,7 @@ entrepreneur.application.list.label.statement = Deadline
 entrepreneur.application.form.label.ticker = Ticker
 entrepreneur.application.form.label.dateOfCreation = Date of creation
 entrepreneur.application.form.label.statement = Statement
+entrepreneur.application.form.label.moneyOffer = Offer
 
 
 

@@ -16,6 +16,7 @@ investor.application.list.label.statement = Deadline
 investor.application.form.label.ticker = Ticker
 investor.application.form.label.dateOfCreation = Date of creation
 investor.application.form.label.statement = Statement
+investor.application.form.label.moneyOffer = Offer
 
 
 
