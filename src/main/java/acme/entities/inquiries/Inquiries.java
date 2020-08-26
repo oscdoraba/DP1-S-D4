@@ -32,11 +32,13 @@ public class Inquiries extends DomainEntity{
 	private String title;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	@Past
 	private Date dateOfCreation;
 	
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	@Future
 	private Date deadline;
 	
