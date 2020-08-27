@@ -64,17 +64,12 @@ public class AdministratorInquiriesCreateService implements AbstractCreateServic
 	@Override
 	public Inquiries instantiate(final Request<Inquiries> request) {
 		assert request != null;
-
-		Inquiries result;
+		Inquiries result = new Inquiries();
 		Date moment;
 		
 		moment = new Date(System.currentTimeMillis() - 1);
+		result.setDateOfCreation(moment);
 		
-
-		result = new Inquiries();
-		
-		
-
 		return result;
 	}
 
@@ -118,10 +113,7 @@ public class AdministratorInquiriesCreateService implements AbstractCreateServic
 		assert request != null;
 		assert entity != null;
 
-		Date moment;
 		
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setDateOfCreation(moment);
 		this.repository.save(entity);
 		
 	}

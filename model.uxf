@@ -378,9 +378,9 @@ Shout
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>623</x>
-      <y>546</y>
-      <w>266</w>
+      <x>616</x>
+      <y>560</y>
+      <w>280</w>
       <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -685,22 +685,6 @@ Indication
 + SERIES_C
 + BRIDGE</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>406</x>
-      <y>483</y>
-      <w>203</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>lt=x-&gt;
-
-m1=0..*
-m2=1
-Registed by ^
-</panel_attributes>
-    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
